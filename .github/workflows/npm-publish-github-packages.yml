@@ -25,10 +25,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
-          cache-dependency-path: ${{ github.workspace }}/yarn.lock
+          cache: 'npm'
+          cache-dependency-path: ${{ github.workspace }}/package-lock.json
 
-      - run: yarn install
+      - run: npm install
 
       - name: Build Docker Image
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
