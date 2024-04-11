@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-          cache-dependency-path: ${{ github.workspace }}/package-lock.json
+          cache-dependency-path: ${{ github.workspace }}/yarn.lock
 
       - run: yarn install
 
